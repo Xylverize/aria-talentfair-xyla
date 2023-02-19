@@ -14,14 +14,6 @@ model_scaler = pickle.load(open("scaler.pkl", "rb"))
 
 
 
-with open('model_forest_tuning.pkl', 'rb') as file_model:
-  model_forest = pickle.load(file_model)
-
-with open('scaler.pkl', 'rb') as file_scaler:
-  model_scaler = pickle.load(file_scaler)
-
-
-
 def run():
     st.title('Target Prediction')
     # Membuat form
