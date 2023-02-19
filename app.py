@@ -7,10 +7,10 @@ import json
 
 # Load All Files
 
-with open('model.pkl', 'rb') as file_model:
+with open('model_forest_tuning.pkl', 'rb') as file_model:
   model = pickle.load(file_model)
 
-with open('model_scaler.pkl', 'rb') as file_model_scaler:
+with open('scaler.pkl', 'rb') as file_model_scaler:
   scaler = pickle.load(file_model_scaler)
 
 
