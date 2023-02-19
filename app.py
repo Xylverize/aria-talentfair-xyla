@@ -7,6 +7,12 @@ import json
 
 # Load All Files
 
+model_forest = pickle.load(open("model/preprocessor.pkl", "rb"))
+
+model_scaler = pickle.load(open("model/preprocessor.pkl", "rb"))
+
+
+
 with open('model_forest_tuning.pkl', 'rb') as file_model:
   model_forest = pickle.load(file_model)
 
@@ -16,7 +22,7 @@ with open('scaler.pkl', 'rb') as file_scaler:
 
 
 def run():
-    st.title('Job Placement Prediction')
+    st.title('Target Prediction')
     # Membuat form
     with st.form(key='form_parameters'):
         
@@ -46,9 +52,9 @@ def run():
     data_inf = pd.DataFrame([data_inf])
     st.dataframe(data_inf)
 
-    data_inf_scaled = scaler.transform(data_inf)
+    data_inf_scaled = model_scaler.transform(data_inf)
     
 
     if submitted:       
-        y_pred_inf = model.predict(data_inf_scaled)
+        y_pred_inf = model_forest.predict(data_inf_scaled)
         st.write('Predicted :', y_pred_inf)
