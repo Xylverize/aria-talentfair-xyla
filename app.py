@@ -51,3 +51,6 @@ def run():
     if submitted:       
         y_pred_inf = model_forest.predict(data_inf_scaled)
         st.write('Predicted :', y_pred_inf)
+      
+if __name__ == '__main__':
+    run()
