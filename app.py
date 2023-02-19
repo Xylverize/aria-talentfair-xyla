@@ -7,9 +7,9 @@ import json
 
 # Load All Files
 
-model_forest = pickle.load(open("model/preprocessor.pkl", "rb"))
+model_forest = pickle.load(open("model_forest_tuning.pkl", "rb"))
 
-model_scaler = pickle.load(open("model/preprocessor.pkl", "rb"))
+model_scaler = pickle.load(open("scaler.pkl", "rb"))
 
 
 
